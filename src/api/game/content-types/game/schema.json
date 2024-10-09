@@ -26,7 +26,12 @@
       "maxLength": 200
     },
     "description": {
-      "type": "blocks"
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     },
     "price": {
       "type": "decimal",
@@ -38,31 +43,19 @@
     },
     "rating": {
       "type": "enumeration",
-      "enum": [
-        "BR0",
-        "BR10",
-        "BR12",
-        "BR14",
-        "BR16",
-        "BR18"
-      ]
+      "enum": ["BR0", "BR10", "BR12", "BR14", "BR16", "BR18"]
     },
     "cover": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "gallery": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
+      "allowedTypes": ["images", "videos"]
     },
     "categories": {
       "type": "relation",
