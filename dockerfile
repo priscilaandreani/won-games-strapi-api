@@ -14,5 +14,14 @@ COPY . .
 RUN chown -R node:node /opt/app
 USER node
 RUN ["npm", "run", "build"]
+
+# VITE
+USER root
+RUN chown node:node /opt/app/node_modules
+
+USER node
+RUN mkdir -p /opt/app/node_modules/.strapi/vite
+
 EXPOSE 1337
+EXPOSE 5173
 CMD ["npm", "run", "develop"]
